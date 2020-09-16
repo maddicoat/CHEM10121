@@ -7,7 +7,7 @@ This is home page for CHEM10121/31 Professional Development: Introduction to Sci
 
 
 > ## Prerequisites
->  You should check that you can log in to the [Jupyter server](https://jupyter.ntu.ac.uk)
+>  You should check that you can log in to the [Jupyter server](https://jupyter.ntu.ac.uk) and open a notebook. You can use a single notebook for all lessons.
 {: .prereq}
 
 {% include links.md %}

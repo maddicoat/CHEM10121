@@ -5,12 +5,9 @@ permalink: index.html  # Is the only page that doesn't follow the pattern /:path
 ---
 This is home page for CHEM10121/31 Professional Development: Introduction to Scientific Programming in Python. The course here owes a great debt to the python workshop hosted by the [Molecular Sciences Software Institute](http://education.molssi.org/).  
 
-<!-- this is an html comment -->
-
-{% comment %} This is a comment in Liquid {% endcomment %}
 
 > ## Prerequisites
->
+>  You should check that you can log in to the [Jupyter server](https://jupyter.ntu.ac.uk)
 {: .prereq}
 
 {% include links.md %}

@@ -24,7 +24,7 @@ In the upper left corner, click where it says "Untitled" and change the name to 
 
 Jupyter notebooks allow us to also use something called **markdown** in some cells. We can use markdown to write descriptions about our notebooks for others to read. It's a good practice to have your first cell be markdown to explain the purpose of the notebook. Let's do that in our first cell. Click inside the first cell, then on the top of the screen select `Cell->Cell Type->Markdown` (shown below).
 
-<img src="../fig/lesson01_fig1.png">
+<img src="../fig/01_screen_1.png">
 
 Now, return to the cell and type the following:
 
@@ -38,7 +38,14 @@ This lesson covers Python basics like variable creation and assignment and using
 
 In Markdown, we create headers using a single `#` sign. Using two (`##`) creates a subheader. After typing this into a cell, press `shift+enter` to evaluate. Now your notebook should look like the following.
 
-<img src="../fig/lesson01_fig2.png">
+<img src="../fig/01_screen_2.png">
+
+In the setup, you uploaded a zipfile with some data files you'll be using in these lessons, to unzip that file ready for use, copy and paste the following (including all punctuation) in the next cell of your notebook:
+
+~~~
+! unzip ~/CHEM10121_python_datafiles.zip -d ~/
+~~~
+
 
 Now that our notebook is set-up, we're ready to start learning some Python!
 

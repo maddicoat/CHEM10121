@@ -8,10 +8,11 @@ objectives:
 - "Assign values to variables."
 - "Use the print function to check how the code is working."
 - "Use multiple assignment to assign several variables at once."
-- "Link data to meaning using a dictionary"
+- "Use a for loop to perform the same action on the items in a list."
+- "Use the append function to create new lists in for loops."
 keypoints:
 - "You can assign the values of several variables at once."
-- "Multiple values can be stored togeother in a list, which is ordered, or a dictionary, which is not ordered." 
+- "Indentation is very important in `for` loops and `if` statements.  Don't forget the `:` and to indent the items in the loop."
 ---
 ## Getting Started
 Python is a computer programming language that has become ubiquitous in scientific programming.  Our initial lessons will run python *interactively* through a python interpreter. We will first use a Jupyter notebook.  The [setup] page should have provided information
@@ -20,7 +21,7 @@ on how to install and start a Jupyter notebook.  Everything included in a code b
 ### Setting up your Jupyter notebooks
 In the [setup], you learned how to start a Jupyter notebook. Now, we will use the notebook to execute Python code. Jupyter notebooks are divided into cells. You run a Jupyter notebook one cell at a time. To execute a cell, click inside the cell and press `shift+enter`.
 
-In the upper left corner, click where it says "Untitled" and change the name to "Introduction to Python". We have now changed the name of the Jupyter Notebook.
+In the upper left corner, click where it says "Untitled" and change the name to "MolSSI Workshop". We have now changed the name of the Jupyter Notebook.
 
 Jupyter notebooks allow us to also use something called **markdown** in some cells. We can use markdown to write descriptions about our notebooks for others to read. It's a good practice to have your first cell be markdown to explain the purpose of the notebook. Let's do that in our first cell. Click inside the first cell, then on the top of the screen select `Cell->Cell Type->Markdown` (shown below).
 
@@ -29,8 +30,8 @@ Jupyter notebooks allow us to also use something called **markdown** in some cel
 Now, return to the cell and type the following:
 
 ~~~
-# Professional Development
-## Introduction to Scientific Programming in Python
+# MolSSI Workshop
+## Introduction
 
 This lesson covers Python basics like variable creation and assignment and using the Jupyter notebook
 ~~~
@@ -42,65 +43,9 @@ In Markdown, we create headers using a single `#` sign. Using two (`##`) creates
 
 Now that our notebook is set-up, we're ready to start learning some Python!
 
-## Saying Hello
-
-The very first thing we'll do (because it's obligatory) is get python to say Hello to us. Type the following into the next cell of your Jupyter notebook.
-
-```
-print("Hello World!")
-```
-{: .language-python}
-
-```
-Hello world!
-```
-{: .output}
-
-Now let's unpack what we did there:<br>
-Highlighted in green is the `print()` function. The print function tells python to print something to the screen. "Something" can be almost anything. The parentheses gather all the stuff that we're sending to the print function. There are extra options we can use if we want to do something special (e.g. print to a file). A place with a whole pile of examples is [here](https://realpython.com/python-print/).<br>
-The final thing to note is that we used quotation marks to supply the *string* Hello World! as an *argument* to the print function. Why do you think we did that? What else could python think Hello World! was?
-
-## Variables
-Let's *assign* the string Hellow World! to a *variable*:
-```
-greeting = "Hello World!"
-```
-{: .language-python}
-
-The syntax for assigning variables is the following:
-~~~
-variable_name = variable_value
-~~~
-{: .language-python}
-
-> ## Check your Understanding
->
-> What is printed by each of the following two statements? 
-> ~~~
-> print("greeting")
-> print(greeting)
-> ~~~
-> {: .language-python}
->
->> ## Answer
->>
->> ~~~
->> greeting
->> Hello World!
->> ~~~
->> {: .output}
-> {: .solution}
-{: .challenge}
-
-* Variables can be strings, numbers, lots of other things
-* Variable names can be (almost!) anything, but they should be readable. Think about reading your code later - "temperature_in_C"
-is informative, "t" is not.
-* You can use any letter, any number and the underscore character
-* In python, the name does not dictate the type of the data
-
 ## Assigning variables and data types
 
-Now let's start working with some numbers. Any python interpreter can work just like a calculator.  This is not very useful. Type the following into the next cell of your Jupyter notebook.
+Any python interpreter can work just like a calculator.  This is not very useful. Type the following into the next cell of your Jupyter notebook.
 
 ```
 3 + 7
@@ -112,9 +57,13 @@ Now let's start working with some numbers. Any python interpreter can work just 
 ```
 {: .output}
 
-Here, Python has performed a calculation for us. To save this value, or other values, we assign it to a variable for later use.
+Here, Python has performed a calculation for us. To save this value, or other values, we assign them to a variable for later use. The syntax for assigning variables is the following:
+~~~
+variable_name = variable_value
+~~~
+{: .language-python}
 
-Now let's try a real calculation. Type the following into the next cell of your Jupyter notebook.
+Let's see this in action with a calculation. Type the following into the next cell of your Jupyter notebook.
 ```
 deltaH = -541.5   #kJ/mole
 deltaS =  10.4     #kJ/(mole K)
@@ -124,6 +73,8 @@ deltaG = deltaH - temp * deltaS
 {: .language-python}
 
 Notice several things about this code.  The lines that begin with `#` are comment lines.  The computer does not do anything with these comments.  They have been used here to remind the user what units each of their values are in. Comments are also often used to explain what the code is doing or leave information for future people who might use the code.  
+
+When choosing variable names, you should choose informative names so that someone reading your code can tell what they represent.  Naming a variable temp or temperature is much more informative than naming that variable t.
 
 We can now access any of the variables from other cells. Let's print the value that we calculated. In the next cell,
 
@@ -137,7 +88,7 @@ print(deltaG)
 ```
 {: .output}
 
-At the beginning of this episode, we introduced the `print()` function.  Often, we will use the print function just to make sure our code is working correctly.
+In the previous code block, we introduced the `print()` function.  Often, we will use the print function just to make sure our code is working correctly.
 
 Note that if you do not specify a new name for a variable, then it doesn't automatically change the value of the variable; this is called being *immutable*.  For example if we typed
 ```
@@ -215,7 +166,6 @@ type(deltaG_string)
 ```
 str
 ```
-{: .output}
 
 ## Lists
 Another common data structure in python is the list.  Lists can be used to group several values or variables together, and are declared using square brackets [ ]. List values are separated by commas. Python has several built in functions which can be used on lists. The built-in function `len` can be used to determine the length of a list. This code block also demonstrates how to print multiple variables.
@@ -235,7 +185,7 @@ The length of this list is 4
 ```
 {: .output}
 
-If you want to operate on a particular element of the list, you use the list name and then put in brackets which element of the list you want.  **In python counting starts at zero.  So the first element of the list is `list[0]`**
+If I want to operate on a particular element of the list, you use the list name and then put in brackets which element of the list you want.  **In python counting starts at zero.  So the first element of the list is `list[0]`**
 
 ```
 # Print the first element of the list
@@ -260,101 +210,6 @@ print(energy_kilojoules)
 -11.296800000000001
 ```
 {: .output}
-
-## Adding, subtracting and multiplying lists
-Let's test what we can do with lists. Start with two simple lists:
-```
-first_list = [3, 4, 7]
-second_list = [2, 5, 1]
-print(first_list + second_list)
-```
-{: .language-python}
-
-```
-[3, 4, 7, 2, 5, 1]
-```
-{: .output}
-
-Adding lists together works the way we expect.
-
-```
-print(first_list - second_list)
-```
-{: .language-python}
-
-```
----------------------------------------------------------------------------
-TypeError                                 Traceback (most recent call last)
-<ipython-input-28-2766c15298c3> in <module>
-      1 first_list = [3, 4, 7]
-      2 second_list = [2, 5, 1]
-----> 3 print(first_list - second_list)
-
-TypeError: unsupported operand type(s) for -: 'list' and 'list'
-```
-{: .error}
-But subtracting lists does not.
-```
-print(first_list * second_list)
-```
-{: .language-python}
-
-```
----------------------------------------------------------------------------
-TypeError                                 Traceback (most recent call last)
-<ipython-input-29-b239fdefe9ad> in <module>
-      1 first_list = [3, 4, 7]
-      2 second_list = [2, 5, 1]
-----> 3 print(first_list * second_list)
-
-TypeError: can't multiply sequence by non-int of type 'list'
-```
-{: .error}
-We can't multiply two lists either.
-
-```
-my_number = 3
-print(first_list * my_number)
-```
-{: .language-python}
-
-```
-[3, 4, 7, 3, 4, 7, 3, 4, 7]
-```
-{: .output}
-But we can multiply a list by an integer.
-
-## pop() and append()
-Python has two other important functions that act on lists, `pop()` and `append()`. Try them out to learn what they do. Print the list and the value each time:
-
-> ## Try it out
->
-> ~~~
-> print(first_list)
-> my_value = first_list.pop()
-> print('my_value is:', my_value)
-> print('The list is now', first_list)
-> print('The length of this list is', len(first_list))
-> first_list.append(8)
-> print('The list is now', first_list)
-> print('The length of this list is', len(first_list))
-> ~~~
-> {: .language-python}
->
->> ## Answer
->>
->> ~~~
->> [3, 4, 7]
->> My_value is: 7
->> The list is now [3, 4]
->> The length of this list is 2
->> The list is now [3, 4, 8]
->> The length of this list is 3
->> ~~~
->> {: .output}
-> {: .solution}
-{: .challenge}
-
 
 ## Slices
 Sometimes you will want to make a new list that is a subset of an existing list.  For example, we might want to make a new list that is just the first few elements of our previous list.  This is called a `slice`.  The general syntax is
@@ -415,82 +270,145 @@ nothing happens to `energy_kcal`.
 ```
 {: .output}
 
-
-## Dictionaries
-Lists are great for keeping, well, *lists*. Let's say you had a shopping list:<br>
-* flour
-* eggs
-* milk
-* chocolate
-* butter
-
-But what if you have a recipe: <br>
-
-| Ingredient | Amount | 
-|----------- | ---- |
-| flour      | 2  |
-| eggs       | 2 | 
-| milk       | 1 |
-| chocolate  | 0.75 |
-| butter     | 0.5 |
-
-The amount of each ingredient is associated with the ingredient. **Dictionaries** are a way that python provides to keep variables together with their meanings. Because each *value* is associated with a *key*, some other languages call this construct an *associative array*. <br>
-Dictionaries are declared using braces { }. Key and value pairs are separated by commas. Like lists, python has several built in functions which can be used on dictionaries. The built-in function `len` can be used to determine the length of a dictionary. Dictionaries don't have an order, you access the values by their key:
-
-~~~
-famous_chemists = {
-"given_name": "Bettye",
-"family_name": "Washington Greene",
-"vintage": 1935
-}
-print(my dict)
-~~~
-{: .language-python}
+## Repeating an operation many times: for loops
+Often, you will want to do something to every element of a list.  The structure
+to do this is called a `for` loop.  The general structure of a `for` loop is
 ```
-{'given_name': 'Bettye', 'family_name': 'Washington Greene', 'vintage': 1935}
+for variable in list:
+    do things using variable
+```
+{: .language-python}
+
+There are two very important pieces of syntax for the `for` loop. Notice the colon `:` after the word list. You will always have a colon at the end of a `for` statement. If you forget the colon, you will get an error when you try to run your code.
+
+The second thing to notice is that the lines of code under the `for` loop (the things you want to do several times) are indented. Indentation is very important in python.  There is nothing like an `end` or `exit` statement that tells you that you are finished with the loop. The indentation shows you what statements are in the loop. Each indentation is 4 spaces by convention in Python 3. However, if you are using an editor which understands Python, it will do the correct indentation for you when you press the tab key on your keyboard. In fact, the Jupyter notebook will notice that you used a colon (`:`) in the previous line, and will indent for you (so you will not need to press tab).
+
+Let's use a loop to change all of our energies in kcal to kJ.
+```
+for number in energy_kcal:
+    kJ = number * 4.184
+    print(kJ)
+```
+{: .language-python}
+
+```
+-56.0656
+-11.296800000000001
+22.593600000000002
+176.1464
 ```
 {: .output}
 
-We can add to a dictionary:
-~~~
-famous_chemists["university"] = "Wayne State University"
-print(famous_chemists)
-~~~
-{: .language-python}
+Now it seems like we are really getting somewhere with our program!  But it would be even better if instead of just printing the values, it saved them in a new list.  To do this, we are going to use the `append` function.  The `append` function adds a new item to the end of an existing list.  The general form of the append function is
 ```
-{'given_name': 'Bettye', 'family_name': 'Washington Greene', 'vintage': 1935, 'university': 'Wayne State University'}
-```
-{: .output}
-Let's check the length of the dictionary:
-```
-print(len(famous_chemists))
+list_name.append(new_thing)
 ```
 {: .language-python}
+
+Try running this block of code.  See if you can figure out why it doesn't work.
 ```
-4
+for number in energy_kcal:
+    kJ = number * 4.184
+    energy_kJ.append(kJ)
+
+print(energy_kJ)
+```
+{: .language-python}
+```
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-12-595146886489> in <module>()
+      2 for number in energy_kcal:
+      3     kJ = number*4.184
+----> 4     energy_kJ.append(kJ)
+      5
+      6 print(energy_kJ)
+
+NameError: name 'energy_kJ' is not defined
+```
+{: .error}
+
+This code doesn't work because on the first iteration of our loop, the list `energy_kJ` doesn't exist.  To make it work, we have to start the list outside of the loop.  The list can be blank when we start it, but we have to start it.
+
+```
+energy_kJ = []
+for number in energy_kcal:
+    kJ = number * 4.184
+    energy_kJ.append(kJ)
+
+print(energy_kJ)
+```
+{: .language-python}
+
+```
+[-56.0656, -12.1336, 22.593600000000002, 176.1464]
 ```
 {: .output}
 
-Now, this dictionary actually only describes a single chemist. A collection of famous chemists might be represented in python as a **list of dictionaries** or a **dictionary of dictionaries**
+## Making choices: logic Statements
+Within your code, you may need to evaluate a variable and then do something if the variable has a particular value.  This type of logic is handled by an `if` statement.  In the following example, we only append the negative numbers to a new list.  
+```
+negative_energy_kJ = []
 
-### How to describe an atom?
-Below is depicted the acetone molecule. Think about how you would describe one of the carbon atoms using a python dictionary:
+for number in energy_kJ:
+    if number < 0:
+        negative_energy_kJ.append(number)
 
-<img src="../fig/acetone.png">
+print(negative_energy_kJ)
+```
+{: .language-python}
+```
+[-56.0656, -11.296800000000001]
+```
+{: .output}
+Other logic operations include
+- equal to `==`
+- not equal to `!=`
+- greater than `>`
+- less than `<`
+- greater than or equal to `>=`
+- less than or equal to `<=`
 
-> ## Design an atom homework
-> Design a dictionary that you could use to describe an atom. Think about the how to distinguish between the three carbon atoms in acetone and write a dictionary for each of the three carbon atoms. For now, make up any values you can't guess.
+You can also use `and`, `or`, and `not` to check more than one condition.
+```
+negative_numbers = []
+for number in energy_kJ:
+    if number < 0 or number == 0:
+        negative_numbers.append(number)
+
+print(negative_numbers)
+```
+{: .language-python}
+```
+[-56.0656, -11.296800000000001]
+```
+{: .output}
+
+If you are comparing strings, not numbers, you use different logic operators like `is`, `in`, or `is not`.  We will see these types of logic operators used in our next lesson.  
+
+>## Exercise
+>
+> The following list contains some floating point numbers and some numbers which  have been saved as strings.  Copy this list exactly into your code.
 > ~~~
-> atom = {
-> }
+> data_list = ['-12.5', 14.4, 8.1, '42']
 > ~~~
 > {: .language-python}
->> ## Hints
->> Consider how the left hand side carbon will differ from the central carbon. <br>
->> What do you need to differentiate between the left hand side carbon and the one on the right? <br>
+> Set up a `for` loop to go over each element of `data_list`.  If the element is a string (`str`), recast it as a float.  Save *all* of the numbers to a new list called `number_list`.  Pay close attention to your indentation!
+>
+>> ## Solution
+>> ~~~
+>> data_list = ['-12.5', 14.4, 8.1, '42']
+>> number_list = []
+>> for item in data_list:
+>>     if type(item) is str:
+>>         item = float(item)
+>>     number_list.append(item)
+>>
+>> print(number_list)
+>> ~~~
+>> {: .output}
 > {: .solution}
-{: .challenge} 
-
+{: .challenge}
 
 ## A note about jupyter notebooks
 If you use the jupyter notebook for your python interpreter, the notebook only executes the current code block.  This can have several unintended consequences. If you change a value and then go back and run an earlier code block, it will use the new value, not the first defined value, which may give you incorrect analysis.  Similarly, if you open your jupyter notebook later, and try to run a code block in the middle, it may tell you that your variables are undefined, even though you can clearly see them defined in earlier code blocks.  But if you didn't re-run those code blocks, then python doesn't know they exist.  

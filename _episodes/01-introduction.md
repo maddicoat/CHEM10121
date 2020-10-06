@@ -500,6 +500,8 @@ Below is depicted the acetone molecule. Think about how you would describe one o
 
 
 ## A note about jupyter notebooks
-If you use the jupyter notebook for your python interpreter, the notebook only executes the current code block.  This can have several unintended consequences. If you change a value and then go back and run an earlier code block, it will use the new value, not the first defined value, which may give you incorrect analysis.  Similarly, if you open your jupyter notebook later, and try to run a code block in the middle, it may tell you that your variables are undefined, even though you can clearly see them defined in earlier code blocks.  But if you didn't re-run those code blocks, then python doesn't know they exist.  
+If you use the jupyter notebook for your python interpreter, the notebook only executes the current code block.  This can have several unintended consequences. If you change a value and then go back and run an earlier code block, it will use the new value, not the first defined value, which may give you incorrect analysis.  Similarly, if you open your jupyter notebook later, and try to run a code block in the middle, it may tell you that your variables are undefined, even though you can clearly see them defined in earlier code blocks.  But if you didn't re-run those code blocks, then python doesn't know they exist. The same thing will occur if you save and close your notebook then reopen it. To rerun everything you've entered into a notebook, use the "fast forward" button at the top of the screen.
+
+<img src="../fig/01_screen_3.png"> 
 
 {% include links.md %}

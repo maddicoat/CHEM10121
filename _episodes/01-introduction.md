@@ -450,7 +450,7 @@ famous_chemists = {
 "family_name": "Washington Greene",
 "vintage": 1935
 }
-print(my dict)
+print(famous_chemists)
 ~~~
 {: .language-python}
 ```

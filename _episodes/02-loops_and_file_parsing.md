@@ -213,11 +213,10 @@ ls data
 
 You should see something like
 ~~~
-data  structures  ProfDev.ipynb
+2_h2o.xyz caffeine.xyz CuOH.cif distance_data_headers.csv water.xyz
 ~~~
 {: .output}
 
-This notebook itself will show up as a file, above, I've called it "ProfDev.ipynb", yours will have a different name. You should see the "data" and "structures" folders.
 
 In order to parse a file, you must tell Python the location of the file, or the "file path". For example, you can see what folder your Jupyter notebook is in by typing `pwd` into a cell in your notebook and evaluating it. `pwd` stands for 'print working directory', and can also be used in your terminal to see what directory you're in.
 

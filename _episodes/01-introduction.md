@@ -40,12 +40,6 @@ In Markdown, we create headers using a single `#` sign. Using two (`##`) creates
 
 <img src="../fig/01_screen_2.png">
 
-In the setup, you uploaded a zipfile with some data files you'll be using in these lessons, to unzip that file ready for use, copy and paste the following (including all punctuation) in the next cell of your notebook:
-
-~~~
-! unzip ~/CHEM10121_python_datafiles.zip -d ~/
-~~~
-
 
 Now that our notebook is set-up, we're ready to start learning some Python!
 

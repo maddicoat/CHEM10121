@@ -236,7 +236,7 @@ Notice that the file paths are different for these two systems. The Windows syst
 
 When we write a script, we want it to be usable on any operating system, thus we will use a python module called `os.path` that will allow us to define file paths in a general way.
 
-In order to get the path to the `tree-rings.txt` file in a general way, type
+In order to get the path to the `CuOH.cif` file in a general way, type
 ~~~
 import os
 
@@ -256,9 +256,9 @@ Here, we have specified that our filepath contains the 'data' directory, and the
 > ## Absolute and relative paths
 > File paths can be *absolute*, or *relative*.
 >
-> A relative file path gives the location relative to the directory we are in. Thus, if we are in the `ProfDev-python` directory, the relative filepath for the `tree-rings.txt` file would be `data/tree-rings.txt`
+> A relative file path gives the location relative to the directory we are in. Thus, if we are in our home directory, the relative filepath for the `CuOH.cif` file would be `data/CuOH.cif`
 >
-> An absolute filepath gives the complete path to a file. This file path could be used from anywhere on a computer, and would access the same file. For example, the absolute filepath to the  `tree-rings.txt` file on a Mac might be `Users/YOUR_USER_NAME/Desktop/ProfDev-python/data/tree-rings.txt`. You can get the absolute path of a file using `os.path.abspath(path)`, where path is the relative path of the file.
+> An absolute filepath gives the complete path to a file. This file path could be used from anywhere on a computer, and would access the same file. For example, the absolute filepath to the  `CuOH.cif` file on a Mac might be `/Users/YOUR_USER_NAME/Desktop/ProfDev-python/data/CuOH.cif`. You can get the absolute path of a file using `os.path.abspath(path)`, where path is the relative path of the file.
 {: .callout}
 
 > ## Python `pathlib`

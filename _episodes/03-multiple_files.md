@@ -144,7 +144,7 @@ Using the solution above, we can modify our loop so that it prints the file name
 for f in filenames:
     # Get the molecule name
     file_name = os.path.basename(f)
-    split_filname = file_name.split('.')
+    split_filename = file_name.split('.')
     molecule_name = split_filename[0]
 
     # Read the data

@@ -454,8 +454,10 @@ Use the provided CuOH.cif file. As previously stated, the file contains all thre
 >>
 >> This is one possible solution for the parsing exercise
 >> ~~~
+>>#Initialise list 
+>>cell_dimension_lines = []
 >>#Find the lines we need
->>with open('CuOH.cif',"r") as outfile:
+>>with open(data_file,"r") as outfile:
 >>    for line in outfile:
 >>        if '_cell_length' in line:
 >>            print(line)

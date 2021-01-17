@@ -400,6 +400,10 @@ Now we can bring together the things we've learnt in the last two episodes:
 >> import os
 >> import glob
 >>
+>>#Define and open output file
+>>output_file = 'orthorhombic_cell_data.txt'
+>>datafile = open(output_file,"w")
+>>
 >> # Make a list of all the cif files to read
 >> # Build the filepath and glob
 >> file_location = os.path.join('structures', 'orthorhombic', '*.cif') #*

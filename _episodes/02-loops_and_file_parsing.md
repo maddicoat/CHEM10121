@@ -50,7 +50,7 @@ for number in energy_kcal:
 
 Now it seems like we are really getting somewhere with our program!  But it would be even better if instead of just printing the values, it saved them in a new list.  To do this, we are going to use the `append` function that we discovered in the last episode.  The `append` function adds a new item to the end of an existing list.  The general form of the append function is
 ```
-list_name.append(new_thing)
+list_name.append(new_thing) # This line would only work if you already had a list called `list_name` and a variable called `new_thing`
 ```
 {: .language-python}
 
@@ -203,7 +203,7 @@ The average of the points is 48.225
 One of the most common tasks in research is analyzing data.  Many computational chemistry programs output text files that include a large amount of information including text and data that you need to analyze.  Often, you need to sort through the output file and identify particular pieces of information that are most important to you.  In general, this is called file parsing.
 
 ### Working with file paths - the `os.path` module
-For this section, we will be working with the file `ethanol.out` in the `outfiles` directory.
+For this section, we will be working with the file `CuOH.cif` in the `data` directory.
 
 To see this, go to a new cell and type `ls`. `ls` stands for 'list', and will list all of the contents of the current directory. **This command is not a Python command, but will work in the Jupyter notebook**. To see everything in the `data` directory, type
 

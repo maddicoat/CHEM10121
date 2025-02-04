@@ -6,7 +6,7 @@ questions:
 - "How do I analyze multiple files at once?"
 objectives:
 - "Import a python library."
-- "Use python library funtions."
+- "Use python library functions."
 - "Process multiple files using a `for` loop."
 - "Print output to a new text file."
 keypoints:
@@ -26,7 +26,7 @@ To analyze multiple files, we will need to import a python **library**.  A **lib
 In this lesson, we will be using the `glob` library, which will help us read in multiple files from our computer.  Within a library there are  modules and functions which do a specific computational task.  Usually a function has some type of input and gives a particular output.  To use a function that is in a library, you often use the dot notation introduced in the previous lesson.  In general
 ```
 import library_name
-output = library_name.funtion_name(input)
+output = library_name.function_name(input)
 ```
 {: .language-python}
 

@@ -13,7 +13,7 @@ keypoints:
 - "You can assign the values of several variables at once."
 - "Multiple values can be stored togeother in a list, which is ordered, or a dictionary, which is not ordered." 
 ---
-## Getting Started!
+## Getting Started
 Python is a computer programming language that has become ubiquitous in scientific programming.  Our initial lessons will run python *interactively* through a python interpreter. We will first use a Jupyter notebook.  The [setup] page should have provided information
 on how to install and start a Jupyter notebook.  Everything included in a code block is something you could type into your python interpreter and evaluate.
 

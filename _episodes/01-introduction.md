@@ -43,7 +43,7 @@ In Markdown, we create headers using a single `#` sign. Using two (`##`) creates
 
 Now that our notebook is set-up, we're ready to start learning some Python!
 
-## Saying Hello
+## Saying Hello!
 
 The very first thing we'll do (because it's obligatory) is get python to say Hello to us. Type the following into the next cell of your Jupyter notebook.
 

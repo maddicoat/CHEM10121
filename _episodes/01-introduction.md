@@ -66,7 +66,7 @@ Let's *assign* the string Hellow World! to a *variable*:
 ```
 greeting = "Hello World!"
 ```
-{: .language-python}
+{: .language-Pseudocode}
 
 The syntax for assigning variables is the following:
 ~~~
